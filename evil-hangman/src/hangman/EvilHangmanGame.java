@@ -6,8 +6,8 @@ import java.util.*;
 
 public class EvilHangmanGame implements IEvilHangmanGame {
 
-    private Set<String> words;
-    private Set<Character> guesses;
+    private Set<String> words = new TreeSet<>();
+    private Set<Character> guesses = new TreeSet<>();
 
     @Override
     public void startGame(File dictionary, int wordLength) {
@@ -17,11 +17,19 @@ public class EvilHangmanGame implements IEvilHangmanGame {
 
             while(scan.hasNextLine()) {
 
-                String line = scan.nextLine();
+                String line = scan.nextLine().toLowerCase().trim();
+
+                if (!line.matches("^[a-z]*$")) {
+                    throw new RuntimeException("Invalid character found in dictionary");
+                }
 
                 if (line.length() == wordLength) {
                     words.add(line);
                 }
+            }
+
+            if (words.size() == 0) {
+                throw new RuntimeException("Sorry, the dictionary has no " + wordLength + " letter words.");
             }
 
         } catch (FileNotFoundException e) {
