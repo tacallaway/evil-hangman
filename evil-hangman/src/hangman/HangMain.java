@@ -109,11 +109,10 @@ public class HangMain {
             }
 
             guesses.add(guess);
-            numGuesses--;
 
             if (numGuesses > 0) {
                 if(count == 0) {
-
+                    numGuesses--;
                     System.out.println("Sorry, there are no " + guess + "'s");
                 } else if(count == 1) {
 
