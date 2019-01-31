@@ -94,7 +94,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
                     maxKeyCount += maxKey.charAt(i) == guess ? 1 : 0;
                 }
 
-                if(keyCount > maxKeyCount) {
+                if(keyCount < maxKeyCount) {
 
                     maxSet = set;
                     maxKey = key;
