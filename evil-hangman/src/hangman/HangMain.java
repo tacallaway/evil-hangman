@@ -110,17 +110,15 @@ public class HangMain {
 
             guesses.add(guess);
 
-            if (numGuesses > 0) {
-                if(count == 0) {
-                    numGuesses--;
-                    System.out.println("Sorry, there are no " + guess + "'s");
-                } else if(count == 1) {
+            if(count == 0) {
+                numGuesses--;
+                System.out.println("Sorry, there are no " + guess + "'s");
+            } else if(count == 1) {
 
-                    System.out.println("Yes, there is 1 " + guess);
-                } else {
+                System.out.println("Yes, there is 1 " + guess);
+            } else {
 
-                    System.out.println("Yes, there are " + count + " " + guess + "'s");
-                }
+                System.out.println("Yes, there are " + count + " " + guess + "'s");
             }
         }
 
