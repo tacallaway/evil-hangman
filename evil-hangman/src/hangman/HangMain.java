@@ -84,7 +84,7 @@ public class HangMain {
                 }
 
                 try {
-                    words = game.makeGuess(guess.toCharArray()[0]);
+                    words = game.makeGuess(guess.charAt(0));
                     break;
                 } catch (IEvilHangmanGame.GuessAlreadyMadeException e) {
                     System.out.println("You already used that letter");
