@@ -91,7 +91,7 @@ public class HangMain {
                 }
             }
 
-            char guessChar = guess.toCharArray()[0];
+            char guessChar = guess.charAt(0);
             char[] word = words.iterator().next().toCharArray();
             int count = 0;
 
